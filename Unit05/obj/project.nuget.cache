@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "w9KS1aL5lfldJv5js9U1Hn3WUOMbGAwc3FV1qZyFJFPOMnSB2BghDrx0a46BQHdIdgNa7hgyqTxd2DHP64z8nA==",
+  "success": true,
+  "projectFilePath": "/home/torazar/Documents/College 1st Year./2nd semester/classes/officialstuffs/cse210-student-articulate-csharp-complete-main/Unit05/Unit05.csproj",
+  "expectedPackageFiles": [
+    "/home/torazar/.nuget/packages/raylib-cs/3.7.0.1/raylib-cs.3.7.0.1.nupkg.sha512",
+    "/home/torazar/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
