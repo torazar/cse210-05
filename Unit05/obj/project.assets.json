@@ -116,19 +116,19 @@
     ]
   },
   "packageFolders": {
-    "/home/torazar/.nuget/packages/": {}
+    "C:\\Users\\tack4\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/torazar/Documents/College 1st Year./2nd semester/classes/officialstuffs/cse210-student-articulate-csharp-complete-main/Unit05/Unit05.csproj",
+      "projectUniqueName": "C:\\Users\\tack4\\cse210-05\\Unit05\\Unit05.csproj",
       "projectName": "Unit05",
-      "projectPath": "/home/torazar/Documents/College 1st Year./2nd semester/classes/officialstuffs/cse210-student-articulate-csharp-complete-main/Unit05/Unit05.csproj",
-      "packagesPath": "/home/torazar/.nuget/packages/",
-      "outputPath": "/home/torazar/Documents/College 1st Year./2nd semester/classes/officialstuffs/cse210-student-articulate-csharp-complete-main/Unit05/obj/",
+      "projectPath": "C:\\Users\\tack4\\cse210-05\\Unit05\\Unit05.csproj",
+      "packagesPath": "C:\\Users\\tack4\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tack4\\cse210-05\\Unit05\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/torazar/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\tack4\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -172,7 +172,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/168/sdk/6.0.300/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
