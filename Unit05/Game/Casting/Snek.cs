@@ -10,7 +10,7 @@ namespace Unit05.Game.Casting
     /// </summary>
     public class Snek : Actor
     {
-        private List<Actor> segments = new List<Actor>();
+        private List<Actor> segmentz = new List<Actor>();
 
         /// <summary>
         /// Constructs a new instance of a Snake.
@@ -21,12 +21,12 @@ namespace Unit05.Game.Casting
         }
 
         /// <summary>
-        /// Gets the snake's body segments.
+        /// Gets the snake's body segmentz.
         /// </summary>
-        /// <returns>The body segments in a List.</returns>
+        /// <returns>The body segmentz in a List.</returns>
         public List<Actor> GetBody()
         {
-            return new List<Actor>(segments.Skip(1).ToArray());
+            return new List<Actor>(segmentz.Skip(1).ToArray());
         }
 
         /// <summary>
@@ -35,27 +35,27 @@ namespace Unit05.Game.Casting
         /// <returns>The head segment as an instance of Actor.</returns>
         public Actor GetHead()
         {
-            return segments[0];
+            return segmentz[0];
         }
 
         /// <summary>
-        /// Gets the snake's segments (including the head).
+        /// Gets the snake's segmentz (including the head).
         /// </summary>
-        /// <returns>A list of snake segments as instances of Actors.</returns>
-        public List<Actor> GetSegments()
+        /// <returns>A list of snake segmentz as instances of Actors.</returns>
+        public List<Actor> GetSegmentz()
         {
-            return segments;
+            return segmentz;
         }
 
         /// <summary>
-        /// Grows the snake's tail by the given number of segments.
+        /// Grows the snake's tail by the given number of segmentz.
         /// </summary>
-        /// <param name="numberOfSegments">The number of segments to grow.</param>
-        public void GrowTail(int numberOfSegments)
+        /// <param name="numberOfSegmentz">The number of segmentz to grow.</param>
+        public void GrowTail(int numberOfSegmentz)
         {
-            for (int i = 0; i < numberOfSegments; i++)
+            for (int i = 0; i < numberOfSegmentz; i++)
             {
-                Actor tail = segments.Last<Actor>();
+                Actor tail = segmentz.Last<Actor>();
                 Point velocity = tail.GetVelocity();
                 Point offset = velocity.Reverse();
                 Point position = tail.GetPosition().Add(offset);
@@ -65,22 +65,22 @@ namespace Unit05.Game.Casting
                 segment.SetVelocity(velocity);
                 segment.SetText("#");
                 segment.SetColor(Constants.GREEN);
-                segments.Add(segment);
+                segmentz.Add(segment);
             }
         }
 
         /// <inheritdoc/>
         public override void MoveNext()
         {
-            foreach (Actor segment in segments)
+            foreach (Actor segment in segmentz)
             {
                 segment.MoveNext();
             }
 
-            for (int i = segments.Count - 1; i > 0; i--)
+            for (int i = segmentz.Count - 1; i > 0; i--)
             {
-                Actor trailing = segments[i];
-                Actor previous = segments[i - 1];
+                Actor trailing = segmentz[i];
+                Actor previous = segmentz[i - 1];
                 Point velocity = previous.GetVelocity();
                 trailing.SetVelocity(velocity);
             }
@@ -90,9 +90,9 @@ namespace Unit05.Game.Casting
         /// Turns the head of the snake in the given direction.
         /// </summary>
         /// <param name="velocity">The given direction.</param>
-        public void TurnHead(Point direction)
+        public void TurnHead(Point directions)
         {
-            segments[0].SetVelocity(direction);
+            segmentz[0].SetVelocity(directions);
         }
 
         /// <summary>
@@ -109,13 +109,14 @@ namespace Unit05.Game.Casting
                 Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
                 string text = i == 0 ? "8" : "#";
                 Color color = i == 0 ? Constants.YELLOW : Constants.GREEN;
+                // Point start = new Point(15, 20);
 
                 Actor segment = new Actor();
                 segment.SetPosition(position);
                 segment.SetVelocity(velocity);
                 segment.SetText(text);
                 segment.SetColor(color);
-                segments.Add(segment);
+                segmentz.Add(segment);
             }
         }
     }

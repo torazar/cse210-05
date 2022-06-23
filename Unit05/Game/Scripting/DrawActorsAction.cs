@@ -25,15 +25,18 @@ namespace Unit05.Game.Scripting
         public void Execute(Cast cast, Script script)
         {
             Snake snake = (Snake)cast.GetFirstActor("snake");
+            Snek snek = (Snek)cast.GetFirstActor("snek");
             List<Actor> segments = snake.GetSegments();
+            List<Actor> segmentz = snek.GetSegmentz();
             Actor score = cast.GetFirstActor("score");
-            Actor food = cast.GetFirstActor("food");
+           
             List<Actor> messages = cast.GetActors("messages");
             
             videoService.ClearBuffer();
             videoService.DrawActors(segments);
+            videoService.DrawActors(segmentz);
             videoService.DrawActor(score);
-            videoService.DrawActor(food);
+            
             videoService.DrawActors(messages);
             videoService.FlushBuffer();
         }

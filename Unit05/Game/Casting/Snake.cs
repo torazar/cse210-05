@@ -109,7 +109,7 @@ namespace Unit05.Game.Casting
                 Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
                 string text = i == 0 ? "8" : "#";
                 Color color = i == 0 ? Constants.YELLOW : Constants.GREEN;
-
+                // Point start = new Point(5, 0);
                 Actor segment = new Actor();
                 segment.SetPosition(position);
                 segment.SetVelocity(velocity);
