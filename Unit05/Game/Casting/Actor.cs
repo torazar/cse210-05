@@ -23,6 +23,7 @@ namespace Unit05.Game.Casting
         /// </summary>
         public Actor()
         {
+            
         }
 
         /// <summary>

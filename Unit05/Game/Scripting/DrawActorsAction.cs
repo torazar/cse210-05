@@ -24,11 +24,18 @@ namespace Unit05.Game.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
+
             Snake snake = (Snake)cast.GetFirstActor("snake");
             Snek snek = (Snek)cast.GetFirstActor("snek");
             List<Actor> segments = snake.GetSegments();
             List<Actor> segmentz = snek.GetSegmentz();
             Actor score = cast.GetFirstActor("score");
+            Score scores = (Score)cast.GetFirstActor("score");
+            int points = 1;
+                scores.AddPoints(points);
+                
+            snake.GrowTail(points, true);
+            snek.GrowTail(points, true);
            
             List<Actor> messages = cast.GetActors("messages");
             
@@ -39,6 +46,7 @@ namespace Unit05.Game.Scripting
             
             videoService.DrawActors(messages);
             videoService.FlushBuffer();
+
         }
     }
 }

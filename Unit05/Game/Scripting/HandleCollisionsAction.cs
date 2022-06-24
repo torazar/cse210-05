@@ -21,6 +21,9 @@ namespace Unit05.Game.Scripting
         /// <summary>
         /// Constructs a new instance of HandleCollisionsAction.
         /// </summary>
+        public bool check(){
+            return isGameOver;
+        }
         public HandleCollisionsAction()
         {
         }
@@ -64,10 +67,21 @@ namespace Unit05.Game.Scripting
             Snake snake = (Snake)cast.GetFirstActor("snake");
             Actor head = snake.GetHead();
             List<Actor> body = snake.GetBody();
+            // the Snek?
+            Snek snek = (Snek)cast.GetFirstActor("snek");
+            Actor headz = snek.GetHead();
+            List<Actor> bodyz = snek.GetBody();
 
-            foreach (Actor segment in body)
+            foreach (Actor segment in bodyz)
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
+                {
+                    isGameOver = true;
+                }
+            }
+            foreach (Actor segment in body)
+            {
+                if (segment.GetPosition().Equals(headz.GetPosition()))
                 {
                     isGameOver = true;
                 }
@@ -80,7 +94,9 @@ namespace Unit05.Game.Scripting
             {
                 Snake snake = (Snake)cast.GetFirstActor("snake");
                 List<Actor> segments = snake.GetSegments();
-                
+                //snek!
+                Snek snek = (Snek)cast.GetFirstActor("snek");
+                List<Actor> segmentz = snek.GetSegmentz();
 
                 // create a "game over" message
                 int x = Constants.MAX_X / 2;
@@ -96,7 +112,14 @@ namespace Unit05.Game.Scripting
                 foreach (Actor segment in segments)
                 {
                     segment.SetColor(Constants.WHITE);
+                    
                 }
+                foreach (Actor segment in segmentz)
+                {
+                    segment.SetColor(Constants.WHITE);
+                    
+                }
+               
                
             }
         }

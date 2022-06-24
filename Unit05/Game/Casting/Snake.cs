@@ -15,8 +15,10 @@ namespace Unit05.Game.Casting
         /// <summary>
         /// Constructs a new instance of a Snake.
         /// </summary>
-        public Snake()
+        public Snake(int x, int y)
         {
+            Point news = new Point(x, y);
+SetPosition(news);
             PrepareBody();
         }
 
@@ -51,7 +53,7 @@ namespace Unit05.Game.Casting
         /// Grows the snake's tail by the given number of segments.
         /// </summary>
         /// <param name="numberOfSegments">The number of segments to grow.</param>
-        public void GrowTail(int numberOfSegments)
+        public void GrowTail(int numberOfSegments, bool Gameover)
         {
             for (int i = 0; i < numberOfSegments; i++)
             {
@@ -64,7 +66,12 @@ namespace Unit05.Game.Casting
                 segment.SetPosition(position);
                 segment.SetVelocity(velocity);
                 segment.SetText("#");
+                if (Gameover== true){
                 segment.SetColor(Constants.GREEN);
+                }
+                else{
+                    segment.SetColor(Constants.WHITE);
+                }
                 segments.Add(segment);
             }
         }
@@ -103,7 +110,7 @@ namespace Unit05.Game.Casting
             int x = Constants.MAX_X / 2;
             int y = Constants.MAX_Y / 2;
 
-            for (int i = 0; i < Constants.SNAKE_LENGTH; i++)
+            for (int i = 100; i < Constants.SNAKE_LENGTH+100; i++)
             {
                 Point position = new Point(x - i * Constants.CELL_SIZE, y);
                 Point velocity = new Point(1 * Constants.CELL_SIZE, 0);

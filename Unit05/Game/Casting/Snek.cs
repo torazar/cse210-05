@@ -15,8 +15,10 @@ namespace Unit05.Game.Casting
         /// <summary>
         /// Constructs a new instance of a Snake.
         /// </summary>
-        public Snek()
+        public Snek(int x, int y)
         {
+            Point news = new Point(x, y);
+SetPosition(news);
             PrepareBody();
         }
 
@@ -51,7 +53,7 @@ namespace Unit05.Game.Casting
         /// Grows the snake's tail by the given number of segmentz.
         /// </summary>
         /// <param name="numberOfSegmentz">The number of segmentz to grow.</param>
-        public void GrowTail(int numberOfSegmentz)
+        public void GrowTail(int numberOfSegmentz, bool GameOver)
         {
             for (int i = 0; i < numberOfSegmentz; i++)
             {
@@ -64,7 +66,12 @@ namespace Unit05.Game.Casting
                 segment.SetPosition(position);
                 segment.SetVelocity(velocity);
                 segment.SetText("#");
-                segment.SetColor(Constants.GREEN);
+                if(GameOver==true){
+                segment.SetColor(Constants.RED);
+                }
+                else{
+                    segment.SetColor(Constants.WHITE);
+                }
                 segmentz.Add(segment);
             }
         }
@@ -103,12 +110,12 @@ namespace Unit05.Game.Casting
             int x = Constants.MAX_X / 2;
             int y = Constants.MAX_Y / 2;
 
-            for (int i = 0; i < Constants.SNAKE_LENGTH; i++)
+            for (int i = -50; i < Constants.SNAKE_LENGTH-50; i++)
             {
                 Point position = new Point(x - i * Constants.CELL_SIZE, y);
                 Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
                 string text = i == 0 ? "8" : "#";
-                Color color = i == 0 ? Constants.YELLOW : Constants.GREEN;
+                Color color = i == 0 ? Constants.YELLOW : Constants.RED;
                 // Point start = new Point(15, 20);
 
                 Actor segment = new Actor();
